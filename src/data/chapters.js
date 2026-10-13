@@ -1,0 +1,86 @@
+export const chapters = [
+  {
+    number: 1,
+    slug: "hello-python",
+    title: "Hello, Python!",
+    emoji: "👋",
+    summary: "Make Python say something and explore your first lines of code.",
+    color: "peach",
+  },
+  {
+    number: 2,
+    slug: "variables",
+    title: "Variables",
+    emoji: "📦",
+    summary: "Give information a name so your programs can remember it.",
+    color: "blue",
+  },
+  {
+    number: 3,
+    slug: "numbers-and-math",
+    title: "Numbers and Math",
+    emoji: "🧮",
+    summary: "Use Python to work with numbers and solve fun puzzles.",
+    color: "yellow",
+  },
+  {
+    number: 4,
+    slug: "talking-to-the-computer",
+    title: "Talking to the Computer",
+    emoji: "💬",
+    summary: "Ask questions and use answers to make a program personal.",
+    color: "pink",
+  },
+  {
+    number: 5,
+    slug: "making-decisions",
+    title: "Making Decisions",
+    emoji: "🧭",
+    summary: "Help your program choose what to do next.",
+    color: "green",
+  },
+  {
+    number: 6,
+    slug: "for-loops",
+    title: "Loops with for",
+    emoji: "🔁",
+    summary: "Repeat instructions and count with a for loop.",
+    color: "purple",
+  },
+  {
+    number: 7,
+    slug: "while-loops",
+    title: "Loops with while",
+    emoji: "🎯",
+    summary: "Keep a game going while a condition is true.",
+    color: "blue",
+  },
+  {
+    number: 8,
+    slug: "lists",
+    title: "Lists",
+    emoji: "🧺",
+    summary: "Collect related things together and explore them one by one.",
+    color: "green",
+  },
+  {
+    number: 9,
+    slug: "functions",
+    title: "Functions",
+    emoji: "🛠️",
+    summary: "Build reusable blocks of code for your own mini-programs.",
+    color: "yellow",
+  },
+  {
+    number: 10,
+    slug: "capstone-project",
+    title: "Your Big Python Project",
+    emoji: "🚀",
+    summary: "Bring your new skills together in a game of your own.",
+    color: "pink",
+  },
+];
+
+export function findChapter(number) {
+  return chapters.find((chapter) => chapter.number === Number(number));
+}
