@@ -585,6 +585,59 @@ p {
   margin-top: 28px;
 }
 
+.chapter-navigation {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.chapter-nav-link {
+  display: flex;
+  min-height: 76px;
+  padding: 14px 18px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  transition:
+    border-color 150ms ease,
+    transform 150ms ease;
+}
+
+.chapter-nav-link:first-child {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.chapter-nav-link:last-child {
+  align-items: flex-end;
+  text-align: right;
+}
+
+a.chapter-nav-link:hover {
+  transform: translateY(-2px);
+  border-color: var(--purple);
+}
+
+.chapter-nav-link span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.chapter-nav-link strong {
+  font-size: 14px;
+}
+
+.chapter-nav-link.is-disabled {
+  opacity: 0.55;
+}
+
 .lesson-overview,
 .python-lab,
 .lesson-step {
@@ -1019,6 +1072,19 @@ p {
     width: calc(100% - 32px);
     min-height: calc(100vh - 150px);
     margin-top: 21px;
+  }
+
+  .chapter-navigation {
+    gap: 10px;
+  }
+
+  .chapter-nav-link {
+    min-height: 72px;
+    padding: 12px;
+  }
+
+  .chapter-nav-link strong {
+    font-size: 12px;
   }
 }
 

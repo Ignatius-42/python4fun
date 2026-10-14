@@ -397,6 +397,17 @@ function lessonSteps(chapter) {
 
 function lessonPage(chapter) {
   const goals = chapter.lesson.goals.map((goal) => `<li>${goal}</li>`).join("");
+  const previousChapter = findChapter(chapter.number - 1);
+  const nextChapter = findChapter(chapter.number + 1);
+  const chapterLink = (adjacentChapter, direction) => {
+    const label = direction === "previous" ? "← Previous" : "Next →";
+    if (!adjacentChapter) {
+      const boundary =
+        direction === "previous" ? "Course beginning" : "Course complete";
+      return `<span class="chapter-nav-link is-disabled" aria-disabled="true"><span>${label}</span><strong>${boundary}</strong></span>`;
+    }
+    return `<a class="chapter-nav-link" href="#/chapter/${String(adjacentChapter.number).padStart(2, "0")}" rel="${direction === "previous" ? "prev" : "next"}"><span>${label}</span><strong>Chapter ${String(adjacentChapter.number).padStart(2, "0")}: ${adjacentChapter.title}</strong></a>`;
+  };
 
   return `
     <main id="main-content" class="subpage">
@@ -450,6 +461,10 @@ function lessonPage(chapter) {
           <pre class="python-output" role="status" aria-live="polite">Ready to run your first Python code.</pre>
         </div>
       </section>
+      <nav class="chapter-navigation" aria-label="Chapter navigation">
+        ${chapterLink(previousChapter, "previous")}
+        ${chapterLink(nextChapter, "next")}
+      </nav>
     </main>`;
 }
 
@@ -525,5 +540,8 @@ function render() {
 }
 
 initializeTheme();
-window.addEventListener("hashchange", render);
+window.addEventListener("hashchange", () => {
+  render();
+  window.scrollTo(0, 0);
+});
 render();
