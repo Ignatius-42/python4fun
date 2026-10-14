@@ -14,12 +14,22 @@ PyQuest is a friendly Python learning app for children aged 10–12. It should:
 
 - Responsive home page, course map, grown-ups page, theme control, and hash routes.
 - Ten chapter lesson outlines, learning goals, starter programs, challenge prompts, and hints.
+- Previous/next navigation between chapters, with unavailable directions disabled at the course boundaries.
 - Pyodide-based Python execution in a dedicated Web Worker, with simulated `input()` answers and a 10-second execution limit so an accidental infinite loop does not freeze the page.
 - Challenge output checks and chapter completion indicators.
 - Versioned local progress storage plus JSON export/import with format validation and an overwrite confirmation.
 - Focus-visible keyboard outlines, associated editor labels, polite status announcements, and responsive layouts.
 - Unit tests for routing, chapter lesson data, and progress backup validation.
 - CI checks and a GitHub Pages deployment workflow.
+
+## Release status
+
+The current feature set is published on `main`. The GitHub Pages source is
+configured for **GitHub Actions**, and the deployment workflow successfully
+publishes the Vite `dist` build. The live page has been verified to load its
+bundled JavaScript and CSS from relative `./assets/` paths. Chapter navigation
+was tested locally in both directions, including the disabled previous link at
+the first chapter.
 
 ## Important behavior and limitations
 
@@ -32,8 +42,8 @@ PyQuest is a friendly Python learning app for children aged 10–12. It should:
 
 ## Remaining work
 
-The current feature set is published on `main`. These are follow-up improvements,
-not blockers for the existing lessons and Python runner.
+These are follow-up improvements, not blockers for the existing lessons and
+Python runner.
 
 ### Content and learning experience
 
@@ -48,9 +58,6 @@ not blockers for the existing lessons and Python runner.
   timeouts, complete a challenge, and export/import progress.
 - Check color contrast and test keyboard navigation, screen-reader announcements,
   and layouts on mobile browsers; fix any issues found.
-- Verify the deployed GitHub Pages site, including navigation and asset loading
-  from the repository subpath. The repository's Pages source must be set to
-  **GitHub Actions**.
 
 ### Potential enhancements
 

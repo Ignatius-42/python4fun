@@ -8,6 +8,9 @@
   served from a GitHub repository subpath.
 - **Hash routes:** Use routes such as `#/chapter/03` so GitHub Pages does not
   need a server-side single-page-app fallback.
+- **Chapter navigation:** Lesson pages link to the previous and next chapters
+  in course order. Disable navigation beyond the first and last chapters rather
+  than wrapping around; return the learner to the top when the chapter changes.
 - **System font stack:** Avoid third-party font requests and keep the app
   usable offline once its files have loaded.
 - **Theme preference:** Follow the operating-system theme unless the learner

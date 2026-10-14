@@ -7,7 +7,8 @@ real Python challenges, and progress that stays on the learner's device.
 ## Project status
 
 PyQuest includes ten starter lessons, a browser-based Python lab, output-based
-challenges, and local chapter completion progress. See
+challenges, previous/next chapter navigation, and local chapter completion
+progress. See
 [docs/PROGRESS.md](./docs/PROGRESS.md) for implemented features, limitations,
 and remaining improvements.
 
