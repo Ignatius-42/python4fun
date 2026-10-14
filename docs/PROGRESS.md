@@ -30,13 +30,35 @@ PyQuest is a friendly Python learning app for children aged 10–12. It should:
 - The ten chapters are starter lessons, not a reviewed or comprehensive curriculum.
 - GitHub Pages deployment requires the repository's Pages source to be configured as **GitHub Actions**.
 
-## Next improvements
+## Remaining work
 
-1. Have teachers or families review the lesson sequence and challenge wording.
-2. Add browser-level automated tests for running code, challenge completion, and import/export.
-3. Review color contrast and test screen readers and mobile browsers.
-4. Consider richer challenge validation than exact output comparison.
-5. Make Pyodide self-hostable or offer an explicit offline setup if offline use becomes a requirement.
+The current feature set is published on `main`. These are follow-up improvements,
+not blockers for the existing lessons and Python runner.
+
+### Content and learning experience
+
+- Ask teachers or families to review the ten-lesson sequence, age suitability,
+  explanations, hints, and challenge wording.
+- Refine lesson content based on that feedback and add more lessons only after
+  the starter sequence has been reviewed.
+
+### Quality and accessibility
+
+- Add browser-level tests for the learner journey: run Python, handle errors and
+  timeouts, complete a challenge, and export/import progress.
+- Check color contrast and test keyboard navigation, screen-reader announcements,
+  and layouts on mobile browsers; fix any issues found.
+- Verify the deployed GitHub Pages site, including navigation and asset loading
+  from the repository subpath. The repository's Pages source must be set to
+  **GitHub Actions**.
+
+### Potential enhancements
+
+- Evaluate richer challenge validation that can accept multiple correct
+  solutions; retain clear, predictable feedback for beginners.
+- If offline use becomes a requirement, decide whether to self-host Pyodide or
+  document an explicit offline setup. The current CDN-based runner requires an
+  internet connection the first time it loads Pyodide.
 
 ## Verification
 
