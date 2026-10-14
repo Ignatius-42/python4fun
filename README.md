@@ -6,14 +6,16 @@ real Python challenges, and progress that stays on the learner's device.
 
 ## Project status
 
-The project is in **Phase 1: scaffold**. The current build provides the
-responsive course map, hash-based navigation, theme controls, and an About
-page. Python execution, lessons, challenges, and progress tracking are planned
-for later phases.
+PyQuest includes ten starter lessons, a browser-based Python lab, output-based
+challenges, and local chapter completion progress. See
+[docs/PROGRESS.md](./docs/PROGRESS.md) for implemented features, limitations,
+and remaining improvements.
 
 ## Run locally
 
-Requirements: Node.js 20 or newer and npm.
+Requirements: Node.js 20 or newer and npm. The Python runtime is downloaded
+from jsDelivr the first time a lesson is run, so an internet connection is
+needed to execute Python.
 
 ```sh
 npm install
@@ -29,17 +31,20 @@ npm run build
 npm run preview
 ```
 
-## Deploy
-
-GitHub Pages deployment will be added during the deployment phase. The Vite
-base path is already relative (`./`) so the built site can be hosted beneath a
-repository path.
-
 ## Privacy
 
-PyQuest has no backend, accounts, analytics, or tracking. The current scaffold
-does not store learner data. Future progress storage is planned to remain on
-the learner's device, with export and import controlled by the family.
+PyQuest has no backend, accounts, analytics, or tracking. Python code executes
+in a browser worker and is not uploaded by the app. The worker loads the
+Pyodide runtime from jsDelivr, which receives normal network request metadata.
+Chapter completion is stored in browser local storage; families can download
+or import a JSON progress backup. Browser storage may be cleared at any time.
+
+## Deploy
+
+The repository includes a GitHub Actions workflow to build and deploy the
+`main` branch to GitHub Pages. In repository settings, configure **Pages →
+Build and deployment → Source → GitHub Actions**. Deployment runs lint,
+formatting checks, tests, and a production build before publishing.
 
 ## License
 
